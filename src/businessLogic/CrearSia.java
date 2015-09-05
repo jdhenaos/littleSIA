@@ -16,9 +16,11 @@ import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import org.omg.PortableInterceptor.HOLDING;
+
 public class CrearSia {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		
 		Sede sede1 = new Sede("Bogota");
 		Sede sede2 =new Sede("Medellin");
@@ -73,11 +75,11 @@ public class CrearSia {
 		ArrayList<Curso> cursosMat = new ArrayList<Curso>();
 		ArrayList<Curso> cursosLen = new ArrayList<Curso>();
 		
-		Curso curso1 = new Curso(3312, "Introduccion", "O", 3, departamentoBtaMat);
-		Curso curso1_1 = new Curso(2212, "Introduccion", "L", 3, departamentoMedMat);
+		Curso curso1 = new Curso();
+		Curso curso1_1 = new Curso();
 		
-		Curso curso2 = new Curso(3220, "Filologia", "L", 4, departamentoBtaLen);
-		Curso curso2_2 = new Curso(3230, "Filologia", "O", 4, departamentoMedLen);
+		Curso curso2 = new Curso();
+		Curso curso2_2 = new Curso();
 		
 		cursosMat.add(curso1);
 		cursosMat.add(curso1_1);
@@ -105,13 +107,13 @@ public class CrearSia {
 		ArrayList<Profesor> profesoresLen = new ArrayList<Profesor>();
 		
 		Profesor profesor1 = new Profesor("Ricardo", "Acosta", fechaProfesor1, "Ingeniero Mecanico");
-		Profesor prfesor1_1 = new Profesor("Sara", "Gomez", fechaProfesor1_1, "Ingeniera de Sistemas");
+		Profesor profesor1_1 = new Profesor("Sara", "Gomez", fechaProfesor1_1, "Ingeniera de Sistemas");
 		
 		Profesor profesor2 = new Profesor("Santiago", "Arias", fechaProfesor2, "Filologo");
 		Profesor profesor2_2 = new Profesor("Maria", "Rodriguez", fechaProfesor2_2, "Licenciada en Lenguas Modernas");
 		
 		profesoresMat.add(profesor1);
-		profesoresMat.add(prfesor1_1);
+		profesoresMat.add(profesor1_1);
 		
 		profesoresLen.add(profesor2);
 		profesoresLen.add(profesor2_2);
@@ -158,12 +160,30 @@ public class CrearSia {
 		
 		estudiantesFilAl.add(estudiante2);
 		estudiantesFilAl.add(estudiante2_1);
-		estudiantesLenMod.add(estudiante2_1);
+		estudiantesLenMod.add(estudiante2_2);
 		estudiantesLenMod.add(estudiante2_3);
 		
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
+		ArrayList<Grupo> grupos = new ArrayList<Grupo>();
 		
+		Grupo grupoIntro1 = new Grupo(1, "Lunes-Jueves", "14:00-16:00", 34, "Aulas Ingenieria", "503-113", profesor1, curso1, estudiantesMatApl);
+		Grupo grupoIntro2 = new Grupo(2, "Martes-Viernes", "16:00-18:00", 30, "Facultad Ingenieria", "501-224", profesor1_1, curso1_1, estudiantesEstad);
+		
+		Grupo grupoFilol1 = new Grupo(1, "Miercoles-Viernes", "7:00-9:00", 20, "Auditorio Gabriel Garcia Marquez", "206", profesor2, curso2, estudiantesFilAl);
+		Grupo grupoFilol2 = new Grupo(2, "Lunes-Miercoles", "9:00-11:00", 25, "Auditorio Julio Cortazar", "206", profesor2_2, curso2_2, estudiantesLenMod);
+		
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		Nota notaEstudiante1 = new Nota(3.5, grupoIntro1, curso1, estudiante1);
+		Nota notaEstudiante1_1 = new Nota(3.5,grupoIntro1, curso1, estudiante1_1);
+		Nota notaEstudiante1_2 = new Nota(4.5, grupoIntro2, curso1_1, estudiante1_2);
+		Nota notaEstudiante1_3 = new Nota(3.8, grupoIntro2, curso1_1, estudiante1_3);
+		
+		Nota notaEstudiante2 = new Nota(4.0, grupoFilol1, curso2, estudiante2);
+		Nota notaEstudiante2_1 = new Nota(3.7, grupoFilol1, curso2, estudiante2_1);
+		Nota notaEstudiante2_2 = new Nota(4.0, grupoFilol2, curso2_2, estudiante2_2);
+		Nota notaEstudiante2_3 = new Nota(4.5, grupoFilol2, curso2_2, estudiante2_3);
 
 	}
 
