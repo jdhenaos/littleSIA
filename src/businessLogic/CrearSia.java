@@ -131,19 +131,38 @@ public class CrearSia {
 		Date fechaEstudiante2_3 = null;
 		
 		fechaEstudiante1 = formato.parse("14/11/1990");
+		fechaEstudiante1_1 = formato.parse("09/05/1991");
+		fechaEstudiante1_2 = formato.parse("06/07/1994");
+		fechaEstudiante1_3 = formato.parse("30/01/1989");
 		
+		ArrayList<Estudiante> estudiantesMatApl = new ArrayList<Estudiante>();
+		ArrayList<Estudiante> estudiantesEstad = new ArrayList<Estudiante>();
 		
-		ArrayList<Estudiante> estudiantes = new ArrayList<Estudiante>();
+		ArrayList<Estudiante> estudiantesFilAl = new ArrayList<Estudiante>();
+		ArrayList<Estudiante> estudiantesLenMod = new ArrayList<Estudiante>();
 		
-		Estudiante estudiante1 = new Estudiante(10713123789, "gbedoyar", "Bedoya", "Guillermo", "", 1253, carrera1);
-		Estudiante estudiante1_1 = new Estudiante();
-		Estudiante estudiante1_2 = new Estudiante();
-		Estudiante estudiante1_3 = new Estudiante();
+		Estudiante estudiante1 = new Estudiante(1713123789, "gbedoyar", "Bedoya", "Guillermo", 3, fechaEstudiante1, 1253, carrera1);
+		Estudiante estudiante1_1 = new Estudiante(1113778990, "phurtadoz", "Hurtado", "Pilar", 4, fechaEstudiante1_1, 1192, carrera1);
+		Estudiante estudiante1_2 = new Estudiante(1115713446, "grojasp", "Rojas", "Gustavo", 4, fechaEstudiante1_2, 1188, carrera1_1);
+		Estudiante estudiante1_3 = new Estudiante(1980970115, "vlopezd", "Lopez", "Vanesa", 5, fechaEstudiante1_3, 1090, carrera1_1);
 		
-		Estudiante estudiante2 = new Estudiante();
-		Estudiante estudiante2_1 = new Estudiante();
-		Estudiante estudiante2_2 = new Estudiante();
-		Estudiante estudiante2_3 = new Estudiante();
+		Estudiante estudiante2 = new Estudiante(1023073913, "jcorredorh", "Corredor", "Jhon", 8, fechaEstudiante2, 7890, carrera2);
+		Estudiante estudiante2_1 = new Estudiante(1115678243, "mguzmanr", "Guzman", "Marta", 7, fechaEstudiante2_1, 7934, carrera2);
+		Estudiante estudiante2_2 = new Estudiante(1334609717, "ejimenezd", "Jimenez", "Esteban", 9, fechaEstudiante2_2, 7800, carrera2_2);
+		Estudiante estudiante2_3 = new Estudiante(1453620910, "acortazara", "Cortazar", "Alfredo", 8, fechaEstudiante2_3, 7886, carrera2_2);
+		
+		estudiantesMatApl.add(estudiante1);
+		estudiantesMatApl.add(estudiante1_1);
+		estudiantesEstad.add(estudiante1_2);
+		estudiantesEstad.add(estudiante1_3);
+		
+		estudiantesFilAl.add(estudiante2);
+		estudiantesFilAl.add(estudiante2_1);
+		estudiantesLenMod.add(estudiante2_1);
+		estudiantesLenMod.add(estudiante2_3);
+		
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
 		
 
 	}
