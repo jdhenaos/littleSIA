@@ -11,81 +11,118 @@ import data.Profesor;
 import data.Sede;
 
 import java.lang.reflect.Array;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
-import org.omg.PortableInterceptor.HOLDING;
+-import java.text.ParseException;
+-import java.text.SimpleDateFormat;
+-
+-import org.omg.PortableInterceptor.HOLDING;
 
 public class CrearSia {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) {
 		
-		Sede sede1 = new Sede("Bogota");
-		Sede sede2 =new Sede("Medellin");
+		Sede Bogota = new Sede("Bogota");
+		Sede Medellin =new Sede("Medellin");
 		
 		//////////////////////////////////////////////////////////////////////////
 		
-		ArrayList<Facultad> facultades = new ArrayList<Facultad>();
+		ArrayList<Facultad> FacultadBog = new ArrayList<Facultad>();
+		ArrayList<Facultad> FacultadMed = new ArrayList<Facultad>();
 		
-		Facultad facultad1 = new Facultad("Ingenieria",sede1);
-		Facultad facultad2 = new Facultad("Lenguas", sede2);
+		Facultad IngBog = new Facultad("Ingenieria",Bogota);
+		Facultad ArtBog = new Facultad("Artes",Bogota);
+		Facultad CiencMed = new Facultad("Ciencias", Medellin);
+		Facultad HumMed = new Facultad("Ciencias Humanas",Medellin);
 		
-		facultades.add(facultad1);
-		facultades.add(facultad2);
+		FacultadBog.add(IngBog);
+		FacultadBog.add(ArtBog);
+		
+		FacultadMed.add(HumMed);
+		FacultadMed.add(CiencMed);
 		
 		
-		///////////////////////////////////////////////////////////////////////
 		
-		ArrayList<Carrera> carrerasMat = new ArrayList<Carrera>();
-		ArrayList<Carrera> carrerasLen = new ArrayList<Carrera>();
+		/**/ Bogota.setFacultades(FacultadBog);
+			Medellin.setFacultades(FacultadMed);
 		
-		Carrera carrera1= new Carrera("Matematica Aplicada", 1025566);
-		Carrera carrera1_1 = new Carrera("Estadistica", 67465657);
-		
-		Carrera carrera2 = new Carrera("Filologia en Aleman", 5698845);
-		Carrera carrera2_2 = new Carrera("Lenguas Modernas", 577878895);
-		
-		carrerasMat.add(carrera1);
-		carrerasMat.add(carrera1_1);
-		
-		carrerasLen.add(carrera2);
-		carrerasLen.add(carrera2_2);
+	
 		
 		/////////////////////////////////////////////////////////////////////////////
 		
-		ArrayList<Departamento> departamento1 = new ArrayList<Departamento>();
-		ArrayList<Departamento> departamento2 = new ArrayList<Departamento>();
+		ArrayList<Departamento> DepartamentoIngBog = new ArrayList<Departamento>();
+		ArrayList<Departamento> DepartamentoArtBog = new ArrayList<Departamento>();
+		ArrayList<Departamento> DepartamentoHumMed = new ArrayList<Departamento>();
+		ArrayList<Departamento> DepartamentoCiencMed = new ArrayList<Departamento>();
 		
-		Departamento departamentoBtaMat = new Departamento("Matematicas", facultad1, carrerasMat);
-		Departamento departamentoBtaLen = new Departamento("Humanas", facultad2, carrerasLen);
+		Departamento IndSisIngBog = new Departamento("Industrial y Sistemas",IngBog);
+		Departamento  DisGrafBog= new Departamento("Escuela de Diseño Grafico", ArtBog);
 		
-		Departamento departamentoMedMat = new Departamento("Matematicas", facultad1, carrerasMat);
-		Departamento departamentoMedLen = new Departamento("Humanas", facultad2, carrerasLen);
+		Departamento MatMed = new Departamento("Matematicas", CiencMed);
+		Departamento HistMed = new Departamento("Historia",HumMed);
 		
-		departamento1.add(departamentoBtaMat);
-		departamento1.add(departamentoBtaLen);
+		DepartamentoIngBog.add(IndSisIngBog);
+		DepartamentoArtBog.add(DisGrafBog);
+		DepartamentoHumMed.add(HistMed);
+		DepartamentoCiencMed.add(MatMed);
 		
-		departamento2.add(departamentoMedMat);
-		departamento2.add(departamentoMedLen);
+		
+		IngBog.setDepartamento(DepartamentoIngBog);
+		ArtBog.setDepartamento(DepartamentoArtBog);
+		HumMed.setDepartamento(DepartamentoHumMed);
+		CiencMed.setDepartamento(DepartamentoCiencMed);		
+		
+		
+	///////////////////////////////////////////////////////////////////////
+		
+		ArrayList<Carrera> CarrerasIndSisIngBog = new ArrayList<Carrera>();
+		ArrayList<Carrera> CarrerasDisGrafBog = new ArrayList<Carrera>();
+		ArrayList<Carrera> CarrerasHistMed = new ArrayList<Carrera>(); 
+		ArrayList<Carrera> CarrerasMatMed = new ArrayList<Carrera>();
+		
+		Carrera IngSistemas = new Carrera("Ingeniería Sistemas", 2879, IndSisIngBog);
+		Carrera DisGrafico = new Carrera("Diseño Gráfico", 2509, DisGrafBog);
+		
+		Carrera Historia  = new Carrera("Historia", 3515, HistMed);
+		Carrera Matematicas = new Carrera("Matematicas",3507,MatMed);
+		
+		CarrerasIndSisIngBog.add(IngSistemas);
+		CarrerasDisGrafBog.add(DisGrafico);
+		CarrerasHistMed.add(Historia);
+		CarrerasMatMed.add(Matematicas);
+		
+		HistMed.setCarreras(CarrerasHistMed);
+		IndSisIngBog.setCarreras(CarrerasIndSisIngBog);
+		MatMed.setCarreras(CarrerasMatMed);
+		DisGrafBog.setCarreras(CarrerasDisGrafBog);
+		
 		
 		/////////////////////////////////////////////////////////////////////////////////
 		
-		ArrayList<Curso> cursosMat = new ArrayList<Curso>();
-		ArrayList<Curso> cursosLen = new ArrayList<Curso>();
+		ArrayList<Curso> CursosIndSisIngBog = new ArrayList<Curso>();
+		ArrayList<Curso> CursosDisGrafBog = new ArrayList<Curso>();
+		ArrayList<Curso> CursosMatMed = new ArrayList<Curso>();
+		ArrayList<Curso> CursosHistMed = new ArrayList<Curso>();
 		
-		Curso curso1 = new Curso();
-		Curso curso1_1 = new Curso();
+		Curso POO = new Curso("Programación Orientada a objetos",2016375, 'C', 3, IndSisIngBog);
+		Curso FotoII = new Curso("Fotografia II ",2016918, 'C', 3, DisGrafBog );
 		
-		Curso curso2 = new Curso();
-		Curso curso2_2 = new Curso();
+		Curso AlgLineal = new Curso("Algebra Lineal",1000003, 'F', 4, MatMed);
+		Curso CatSigifEspinal = new Curso("Catedra Sigifredo Espinal",3006734, 'L', 4, HistMed);
 		
-		cursosMat.add(curso1);
-		cursosMat.add(curso1_1);
 		
-		cursosLen.add(curso2);
-		cursosLen.add(curso2_2);
+		
+		CursosIndSisIngBog.add(POO);		
+		CursosDisGrafBog.add(FotoII);		
+		CursosMatMed.add(AlgLineal);		
+		CursosHistMed.add(CatSigifEspinal);
+		
+		IndSisIngBog.setCursos(CursosIndSisIngBog);
+		DisGrafBog.setCursos(CursosDisGrafBog);
+		MatMed.setCursos(CursosMatMed);
+		HistMed.setCursos(CursosHistMed);
+		
 		
 		//////////////////////////////////////////////////////////////////////////////////////
 		
@@ -130,7 +167,7 @@ public class CrearSia {
 		Date fechaEstudiante2 = null;
 		Date fechaEstudiante2_1 = null;
 		Date fechaEstudiante2_2 = null;
-		Date fechaEstudiante2_3 = null;
+		Date fechaEstudiante2_3;
 		
 		fechaEstudiante1 = formato.parse("14/11/1990");
 		fechaEstudiante1_1 = formato.parse("09/05/1991");
