@@ -115,10 +115,7 @@ public class Grupo {
 	public Grupo(int numero, String diasDeLaSemana,String horasDelDia){
 		this(numero, diasDeLaSemana, horasDelDia, 0, null, null, null, null, null);
 	}
-	
-	public Grupo(int numero, String diasDeLaSemana){
-		this(numero, diasDeLaSemana, null, 0, null, null, null, null, null);
-	}
+
 	
 	public Grupo(int numero){
 		this(numero,null,null,0,null,null,null,null,null);
@@ -138,66 +135,55 @@ public class Grupo {
 	public Grupo(int numero, String salon){
 		this(numero,null,null,0,null,salon,null,null,null);
 	}
-	public Grupo(int numero, String edificio){
-		this(numero,null,null,0,edificio,null,null,null,null);
-	}
+	
 	public Grupo(int numero, int cupos){
 		this(numero,null,null,cupos,null,null,null,null,null);
 	}
-	public Grupo(int numero, String horasDelDia){
-		this(numero,null,horasDelDia,0,null,null,null,null,null);
-	}
+
 	
 	///////////////////////////////////////////////////////////////////////////////////
 	
 	public Grupo(String horasDelDia,int cupos,String edificio,
 			String salon,Profesor profesor,Curso curso,List<Estudiante> estudiantes){
-		this(null, null, horasDelDia, cupos, edificio, salon, profesor, curso, estudiantes);
+		this(0, null, horasDelDia, cupos, edificio, salon, profesor, curso, estudiantes);
 	}
 	public Grupo(String horasDelDia,int cupos,String edificio,
 			String salon,Profesor profesor,Curso curso){
-		this(null, null, horasDelDia, cupos, edificio, salon, profesor, curso, null);
+		this(0, null, horasDelDia, cupos, edificio, salon, profesor, curso, null);
 	}
 	public Grupo(String horasDelDia,int cupos,String edificio,
 			String salon,Profesor profesor){
-		this(null, null, horasDelDia, cupos, edificio, salon, profesor, null, null);
+		this(0, null, horasDelDia, cupos, edificio, salon, profesor, null, null);
 	}
 	public Grupo(String horasDelDia,int cupos,String edificio,
 			String salon){
-		this(null, null, horasDelDia, cupos, edificio, salon, null, null, null);
+		this(0, null, horasDelDia, cupos, edificio, salon, null, null, null);
 	}
 	public Grupo(String horasDelDia,int cupos,String edificio){
-		this(null, null, horasDelDia, cupos, edificio, null, null, null, null);
+		this(0, null, horasDelDia, cupos, edificio, null, null, null, null);
 	}
 	public Grupo(String horasDelDia,int cupos){
-		this(null, null, horasDelDia, cupos, null, null, null, null, null);
+		this(0, null, horasDelDia, cupos, null, null, null, null, null);
 	}
 	public Grupo(String horasDelDia){
-		this(null, null, horasDelDia, null, null, null, null, null, null);
+		this(0, null, horasDelDia, 0, null, null, null, null, null);
 	}
 	
 	///////////////////////////////////////////////////////////////////////////////////////
 	
 	public Grupo(int cupos,String edificio,
 			String salon,Profesor profesor,Curso curso,List<Estudiante> estudiantes){
-		this(null, null, null, cupos, edificio, salon, profesor, curso, estudiantes);
+		this(0, null, null, cupos, edificio, salon, profesor, curso, estudiantes);
 	}
 	public Grupo(int cupos,String edificio,
 			String salon,Profesor profesor,Curso curso){
-		this(null, null, null, cupos, edificio, salon, profesor, curso, null);
+		this(0, null, null, cupos, edificio, salon, profesor, curso, null);
 	}
 	public Grupo(int cupos,String edificio,
 			String salon,Profesor profesor){
-		this(null, null, null, cupos, edificio, salon, profesor, null, null);
+		this(0, null, null, cupos, edificio, salon, profesor, null, null);
 	}
-	public Grupo(int cupos,String edificio, String salon){
-		this(null, null, null, cupos, edificio, salon, null, null, null);
-	}
-	public Grupo(int cupos,String edificio){
-		this(null, null, null, cupos, edificio, null, null, null, null);
-	}
-	public Grupo(int cupos){
-		this(null, null, null, cupos, null, null, null, null, null);
-	}
+
 	
 }
+
