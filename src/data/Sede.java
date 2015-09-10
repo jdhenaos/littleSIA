@@ -49,6 +49,20 @@ public class Sede {
 		this(null,facultades);
 	}
 	
+	
+	@Override	
+	public String toString(){
+		
+		String s = "\n";
+		s="Sede: "+this.getNombre()+"\n\nFacultades:\n";
+		
+		for (Facultad facultad : facultades)
+		    s += "-"+facultad.getNombre()+"\n";
+		
+		
+		return(s);
+	}
+	
 
 }
 
