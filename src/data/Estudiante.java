@@ -289,6 +289,11 @@ public class Estudiante {
 	this (0,usuario,apellido,nombre,papa,semestre, fechanacimiento ,codigo,carrera,grupos,notas);
 
 }
+	public Estudiante(int documento, String usuario, String apellido, String nombre,int semestre, Date fechanacimiento, int codigo,Carrera carrera){
+
+	this (documento,usuario,apellido,nombre,0,semestre, fechanacimiento ,codigo,carrera,null,null);
+
+}
 	
 	
 	public Estudiante(){

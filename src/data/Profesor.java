@@ -411,4 +411,18 @@ public class Profesor {
 		this(nombre, apellido, 0, fechaDeNacimiento, titulo, null, null);
 	}
 	
+	@Override	
+	public String toString(){
+		
+		String s = "\n";
+		s="Profesor: "+this.getNombre()+" "+ this.getApellido()+"\n\nDocumento: "+this.getDocumento()+"\nTitulo: "+this.getTitulo();
+		
+		int index=0;
+		for (Grupo grupo : grupos)
+		    s += "-"+ ++index+ " "+grupo.getCurso()+"\n";
+		
+		
+		return(s);
+	}
+	
 }

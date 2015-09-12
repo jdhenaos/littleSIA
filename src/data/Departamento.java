@@ -122,4 +122,54 @@ public class Departamento {
 		this(nombre, null, null, null,cursos);
 	}
 	
+	@Override	
+	public String toString(){
+		
+		String s = "\n";
+		s="Departamentos: "+this.getNombre()+"\n\n[1] Carreras:\n";
+		
+		for (Carrera carrera : carreras)
+		    s += "-"+carrera.getNombre()+"\n";
+		
+		s+="[2] Profesores\n[3] Cursos";
+		
+		return(s);
+	}
+	
+	public String listarCarreras(){
+		String s = "\n";
+		s="Carreras de "+this.getNombre()+"\n\nCarreras:\n";
+		
+		int index=0;
+		for (Carrera carrera : carreras)
+		    s += "-"+ ++index+ " "+carrera.getNombre()+"\n";
+		
+		return(s);
+	}
+	
+	public String listarProfesores(){
+		String s = "\n";
+		s="Profesores de "+this.getNombre()+"\n\nProfesores:\n";
+		
+		int index=0;
+		for (Profesor profesor: profesores)
+		    s += "-"+ ++index+ " "+profesor.getNombre()+"\n";
+		
+		
+		
+		return(s);
+	}
+	
+	public String listarCursos(){
+		String s = "\n";
+		s="Cursos de "+this.getNombre()+"\n\nCursos:\n";
+		
+		int index=0;
+		for (Curso curso : cursos)
+		    s += "-"+ ++index+ " "+curso.getNombre()+"\n";
+		
+		return(s);
+	}
+	
+	
 }

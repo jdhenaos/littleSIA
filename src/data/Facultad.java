@@ -63,4 +63,19 @@ public class Facultad {
 	public Facultad(){
 		this (null,null,null);
 	}
+	
+	
+	@Override	
+	public String toString(){
+		
+		String s = "\n";
+		s="Facultad: "+this.getNombre()+"\n\nDepartamentos:\n";
+		
+		int index=0;
+		for (Departamento departamento : departamentos)
+		    s += "-"+ ++index+ " "+departamento.getNombre()+"\n";
+		
+		
+		return(s);
+	}
 }

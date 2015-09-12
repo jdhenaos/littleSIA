@@ -239,4 +239,18 @@ public class Curso {
 	public Curso(){
 		this(null,0,'0',0,null,null);
 	}
+	
+	@Override	
+	public String toString(){
+		
+		String s = "\n";
+		s="Curso: "+this.getNombre()+"\n\nCodigo:"+this.getCodigo()+"\nTipologia:"+this.getTipologia()+"\nCreditos:"+this.getCreditos()+"\ngrupos:\n";
+		
+		int index=0;
+		for (Grupo grupo : grupos)
+		    s += "-"+ ++index + " "+ grupo.getDiasDeLaSemana() +"\n";
+		
+		
+		return(s);
+	}
 }
